@@ -98,8 +98,8 @@ const CompanionForm = ({ initialData, categories }: CompanionFormProps) => {
         description: "Success.",
       });
 
-      router.refresh();
       router.push("/");
+      router.refresh();
     } catch (error) {
       toast({
         variant: "destructive",
