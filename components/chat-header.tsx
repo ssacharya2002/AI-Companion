@@ -48,8 +48,8 @@ const ChatHeader = ({ companion }: ChatHeaderProps) => {
             description:"Success"
         })
 
-        router.refresh();
         router.push("/");
+        router.refresh();
     } catch (error) {
         toast({
             variant:"destructive",
@@ -59,7 +59,7 @@ const ChatHeader = ({ companion }: ChatHeaderProps) => {
   }
 
   return (
-    <div className="flex w-full justify-between items-center border-b border-primary/10 pb-4 pt-2">
+    <div className="flex w-full justify-between items-center border-b border-primary/10 pb-4 ">
       <div className="flex gap-x-2 items-center">
         <Button onClick={() => router.back()} size="icon" variant="ghost">
           <ChevronLeft className="h-8 w-8" />
