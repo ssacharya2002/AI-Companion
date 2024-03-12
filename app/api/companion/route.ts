@@ -2,7 +2,6 @@
 import prismadb from '@/lib/prismadb';
 import { currentUser } from '@clerk/nextjs';
 import { NextResponse } from 'next/server';
-import * as z from 'zod'
 
 
 export async function POST(req: Request) {

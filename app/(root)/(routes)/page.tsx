@@ -28,7 +28,7 @@ const RootPage  = async({
        include:{
         _count :{
             select:{
-                messages :true
+                messages :true,
             }
         } 
        }

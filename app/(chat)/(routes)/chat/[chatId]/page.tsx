@@ -31,7 +31,7 @@ const ChatId = async ({
         include:{
             messages:{
                 orderBy:{
-                    createdAt:"desc"
+                    createdAt:"asc"
                 },
                 where:{
                     userId:userId

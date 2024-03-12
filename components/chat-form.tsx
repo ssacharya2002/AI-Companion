@@ -20,7 +20,7 @@ isLoading,
 onSubmit,
 }:ChatFormProps) => {
     return ( 
-        <form className="border-t border-primary/10 py-4 flex items-center gap-x-2">
+        <form onSubmit={onSubmit} className="border-t border-primary/10 py-4 flex items-center gap-x-2">
             <Input
             disabled={isLoading}
             onChange={handleInputChange}
