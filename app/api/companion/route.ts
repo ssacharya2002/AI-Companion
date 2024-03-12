@@ -1,5 +1,6 @@
 
 import prismadb from '@/lib/prismadb';
+import { checkSubscription } from '@/lib/subscription';
 import { currentUser } from '@clerk/nextjs';
 import { NextResponse } from 'next/server';
 
@@ -28,6 +29,12 @@ export async function POST(req: Request) {
 
         // todo: check for subscription
 
+        const isPro = await checkSubscription();
+
+        if (!isPro) {
+            return new NextResponse("Pro subscription is required", { status: 403 })
+        }
+
         const companion = await prismadb.companion.create({
             data: {
                 categoryId,
@@ -42,7 +49,7 @@ export async function POST(req: Request) {
         })
 
         console.log("[COMPANION_POST]", companion);
-        
+
 
 
         return NextResponse.json(companion);
